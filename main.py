@@ -58,6 +58,8 @@ This is intended to be the logic backend for War.
 
 import random
 
+
+
 class Card():
 	def __init__(self, suit, val):
 		self.suit = suit
@@ -66,6 +68,7 @@ class Card():
 	def show(self):
 		print("{} of {}".format(self.val, self.suit))
 
+#Builds a deck of cards
 class Deck():
 	def __init__(self):
 		self.cards = []
@@ -80,16 +83,24 @@ class Deck():
 		for c in self.cards:
 			c.show()
 
+    #Shuffles the deck
 	def shuffle(self):
 		for i in range(len(self.cards)-1, 0, -1):
 			r = random.randint(0 , i)
 			self.cards[i], self.cards[r] = self.cards[r], self.cards[i]	
 
+	#Splits the deck into even halves for 2 players
 	def deal(self):
-		for l in self.cards:
-			firstHalf = self.cards[]
-			secondHalf = self.cards[]
+		for i in self.cards:
+			self.firstHalf = self.cards[:26]
+			self.secondHalf = self.cards[26:]
 
+	#Verifies that the deck has been dealt correctly.
+	def showHands(self):
+		for i in self.firstHalf:
+		  i.show()
+		for i in self.secondHalf:
+		  i.show()
 			
 
 class Player():
@@ -106,4 +117,8 @@ class Player():
 
 deck = Deck()
 deck.shuffle()
-deck.show()
+deck.deal()
+deck.showHands()
+print(len(deck.firstHalf))
+print(len(deck.secondHalf))
+
