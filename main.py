@@ -107,18 +107,28 @@ class Player():
 	def __init__(self, name):
 		self.name = name
 		self.hand = []
+ 
 
-	def draw(self, deck):
-		self.hand.append(deck.drawCard())
-
+	def playerHand(self):
+	  x = 0
+	  while(x < 26):
+		  self.hand.append(deck.cards.pop())
+		  x += 1
+		  
+	def show(self):
+	  for i in self.hand:
+	    i.show()
 
 #testcard = Card('Clubs', 6)
 #testcard.show()
-
 deck = Deck()
 deck.shuffle()
 deck.deal()
-deck.showHands()
-print(len(deck.firstHalf))
-print(len(deck.secondHalf))
-
+#deck.show()
+Bob = Player('Bob')
+Bob.playerHand()
+Bob.show()
+print('\n')
+Carl = Player('Carl')
+Carl.playerHand()
+Carl.show()
