@@ -57,26 +57,24 @@ This is intended to be the logic backend for War.
 '''
 
 import random
+import time
 import warClasses
 
 print('Welcome to WAR!')
-player1 = input('Please enter a name for player 1: ')
+player1 = input('Please enter a name for player 1: ' + '\n')
 print('Hello ' + player1)
-player2 = input('Please enter a name for player 2: ')
+player2 = input('Please enter a name for player 2: ' + '\n')
 print('Hello ' + player2)
+print('\n')
+print('Please wait while the computer deals the cards...')
+time.sleep(2)
+print('Cards have been dealt successfully.')
 
 
+player1 = warClasses.Player(player1)
+player1.playerHand()
 
-#testcard = Card('Clubs', 6)
-#testcard.show()
-#deck = Deck()
-#deck.shuffle()
-#deck.deal()
-#deck.show()
-#Bob = Player('Bob')
-#Bob.playerHand()
-#Bob.show()
-#print('\n')
-#Carl = Player('Carl')
-#Carl.playerHand()
-#Carl.show()
+print('\n')
+
+player2 = warClasses.Player(player2)
+player2.playerHand()

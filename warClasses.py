@@ -18,6 +18,7 @@ class Deck():
 		self.cards = []
 		self.build()
 
+	#Build function that gets passed to the Card class and populates the self.cards list
 	def build(self):
 		for cardsuit in ["Diamonds", "Spades", "Hearts", "Clubs"]:
 			for cardvalue in range(1, 14): 
@@ -63,16 +64,7 @@ class Player():
 	  for i in self.hand:
 	    i.show()
 
-#testcard = Card('Clubs', 6)
-#testcard.show()
-#deck = Deck()
-#deck.shuffle()
-#deck.deal()
-#deck.show()
-#Bob = Player('Bob')
-#Bob.playerHand()
-#Bob.show()
-#print('\n')
-#Carl = Player('Carl')
-#Carl.playerHand()
-#Carl.show()
+
+deck = Deck()
+deck.shuffle()
+deck.deal()
