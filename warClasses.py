@@ -12,6 +12,8 @@ class Card():
 	def show(self):
 		print("{} of {}".format(self.val, self.suit))
 
+
+
 #Builds a deck of cards
 class Deck():
 	def __init__(self):
@@ -34,19 +36,7 @@ class Deck():
 			r = random.randint(0 , i)
 			self.cards[i], self.cards[r] = self.cards[r], self.cards[i]	
 
-	#Splits the deck into even halves for 2 players
-	def deal(self):
-		for i in self.cards:
-			self.firstHalf = self.cards[:26]
-			self.secondHalf = self.cards[26:]
 
-	#Verifies that the deck has been dealt correctly.
-	def showHands(self):
-		for i in self.firstHalf:
-		  i.show()
-		for i in self.secondHalf:
-		  i.show()
-			
 
 class Player():
 	def __init__(self, name):
@@ -67,4 +57,4 @@ class Player():
 
 deck = Deck()
 deck.shuffle()
-deck.deal()
+

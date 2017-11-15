@@ -62,9 +62,10 @@ import warClasses
 
 print('Welcome to WAR!')
 player1 = input('Please enter a name for player 1: ' + '\n')
-print('Hello ' + player1)
+print('Hello ' + player1 + '!')
+print('\n')
 player2 = input('Please enter a name for player 2: ' + '\n')
-print('Hello ' + player2)
+print('Hello ' + player2 + '!')
 print('\n')
 print('Please wait while the computer deals the cards...')
 time.sleep(2)
@@ -73,8 +74,28 @@ print('Cards have been dealt successfully.')
 
 player1 = warClasses.Player(player1)
 player1.playerHand()
-
-print('\n')
-
 player2 = warClasses.Player(player2)
 player2.playerHand()
+
+
+'''
+This block of code pulls out the cards values and populates new lists so that those lists can be easily compared to one 
+another instead of trying to compare the object instances.
+'''
+player1List = []
+player2List = []
+
+for i in player1.hand:
+	player1List.append(i.val)
+for i in player2.hand:
+	player2List.append(i.val)
+
+
+for i in player1List:
+	if i > player2List[i]:
+		print(str(player1.name + " wins the hand!"))
+	elif player2List[i] > i:
+		print(str(player2.name + " wins the hand!"))
+	else:
+		print("IT'S TIME FOR WAR!!!")
+
